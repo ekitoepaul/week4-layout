@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mama Njeri's Kitchen</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="debug.css">
+</head>
+
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Welcome to Mama Njeri's Kitchen</h1>
+      </div>
+      <p class="logo">Mama Njeri's Kitchen</p>
+      <nav class="main-nav">
+        <a href="#menu">Menu</a>
+        <a href="#about">About us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="stylesheet" href="debug.css" />
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Welcome to Mama Njeri's Kitchen</h1>
+      </div>
+       <div class="backdrop">
+       <div class="dialog">
+       <h2>Order received</h2>
+       <p>We will call you within 10 minutes.</p>
+      </div>
+      </div>
+      <p class="eyebrow">Since 2015</p>
+      <section class="hero">
+  <h1>Home-cooked food in Nakuru since 2015</h1>
+
+  <p>Pilau, chapati, githeri and fresh juice, made every morning.</p>
+
+  <div class="hero__actions">
+    <a class="button" href="#menu">See today's menu</a>
+
+    <a class="button button--secondary" href="tel:+254717544278"> Call us </a>
+  </div>
+</section>
+      <section class="order-section">
+      <a
+        class="whatsapp-button"
+        href="https://wa.me/254712345678?   text=Hello%2C%20I%20would%20like%20to%20place%20an%20order."
+        target="_blank" rel="noopener" >Order on WhatsApp
+        <a class="button button--secondary" href="tel:+254712345678">Call Us</a>
+      </a>
+    </section>
+
+
+      <section id="menu">
+        <div class="menu-card">
+          <img
+            src="images/adrian-infernus-food.jpg"
+            alt="Grilled chicken served with rice and vegetables"
+            class="menu-card-image"
+          />
+          <h3>Grilled Chicken</h3>
+          <p>Served with rice, vegetables, and a side sauce.</p>
+          <p class="price">KSh 850</p>
+        </div>
+        <h2>Today's menu</h2>
+        <article class="card">
+          <h3>Beef pilau</h3>
+          <p>Spiced rice cooked with tender beef, served with kachumbari.</p>
+          <p class="price">KSh 350</p>
+        </article>
+        <article class="card">
+          <h3>Chapati and beans</h3>
+          <p>Two soft chapatis with coconut beans.</p>
+          <p class="price">KSh 200</p>
+        </article>
+        <article class="card featured">
+          <h3>Githeri special</h3>
+          <p>Maize and beans fried with onions, tomatoes and avocado.</p>
+          <p class="price">KSh 250</p>
+        </article>
+        <article class="card featured">
+        <span class="badge">Chef's choice</span>
+          <h3>Mukimo special</h3>
+          <p>A hearty maize-and-potato dish served with vegetables.</p>
+        </article>
+    <article class="overlay-card">
+        <img 
+          src="images/Special-Githeri.jpg" width="1200px"
+          alt="A plate of githeri served with fresh vegetables"
+          class="overlay-card__image">
+
+      <div class="overlay-card__overlay" aria-hidden="true"></div>
+
+      <div class="overlay-card__content">
+       <span class="badge">Chef's choice</span>
+       <h3 class="overlay-card__title">Githeri Special</h3>
+        <p class="overlay-card__text">
+         A hearty maize-and-beans dish served with fresh vegetables.
+       </p>
+    </div>
+    </article>
+
+
+      </section>
+
+      <section id="about">
+        <h2>About us</h2>
+        <p>
+          We opened with one jiko and two tables. Today we serve more than
+          <strong>200 customers</strong> a day.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact us</h2>
+        <p class ="is-hidden">
+          Thank you, we will reply within a day.
+
+        </p>
+        <form class="contact-form">
+          <label for="firstname"> first Name</label>
+          <input  type="text" id="firstname" name="firstname"
+            type="text" autocomplete="given-name"
+          />
+          <label for="lastName">Last Name:</label>
+          <input name="lastName" id="lastName"
+            type="text" autocomplete="family-name"
+          />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email"
+            type="email" autocomplete="off"
+          />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <h1>Welcome to Mama Njeri's Kitchen</h1>
+      </div>
+      <p>&copy; 2026 Mama Njeri's Kitchen. Open daily, 7 am to 9 pm.</p>
+    </footer>
+  </body>
+</html>

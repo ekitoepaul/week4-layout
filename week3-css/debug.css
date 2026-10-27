@@ -1,0 +1,27 @@
+/* 1. Make the logo larger */
+.logo {
+  font-size: 2rem
+  color: #ffffff;
+}
+
+/* 2. Give the about section a pale background */
+#About {
+  background-color: var(--color-primary-light);
+}
+
+/* 3. Give the "200 customers" text a pale highlight 12rem wide */
+strong {
+  width: 12rem;
+  background-color: var(--color-primary-light);
+}
+
+/* 4. Put the badge in the top left corner of the featured card */
+.featured .badge {
+  left: 1rem;
+  position: static;
+}
+
+/* 5. Make the prices orange */
+.price {
+  colour: #c2410c;
+}
