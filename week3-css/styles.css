@@ -159,6 +159,7 @@ img {
 }
 
 .main-nav {
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -188,6 +189,11 @@ img {
   outline-offset: 3px;
   background-color: rgb(255 255 255 / 0.12);
   color: #fff;
+}
+
+.main-nav .button {
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
@@ -288,6 +294,30 @@ img {
   border-color: var(--color-primary-light);
 }
 
+.menu-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.menu-list {
+  flex: 1 1 40rem;
+  min-width: 0;
+}
+
+.opening-hours {
+  flex: 1 1 15rem;
+  min-width: 0;
+  padding: var(--card-padding);
+  background-color: var(--color-primary-tint);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+}
+
+.opening-hours h3 {
+  margin-top: 0;
+}
 /* =========================================
    Menu cards
    ========================================= */
@@ -305,7 +335,8 @@ img {
 
 .card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex: 1 1 15rem;
   width: 100%;
   max-width: 100%;
@@ -330,6 +361,11 @@ img {
 .card p {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.card .button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .card + .card {

@@ -21,6 +21,7 @@
         <a href="#menu">Menu</a>
         <a href="#about">About us</a>
         <a href="#contact">Contact</a>
+        <a class="button" href="#contact">Order now</a>
       </nav>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,37 +64,62 @@
 
 
       <section id="menu">
-        <div class="menu-card">
-          <img
-            src="images/adrian-infernus-food.jpg"
-            alt="Grilled chicken served with rice and vegetables"
-            class="menu-card-image"
-          />
-          <h3>Grilled Chicken</h3>
-          <p>Served with rice, vegetables, and a side sauce.</p>
-          <p class="price">KSh 850</p>
-        </div>
-        <h2>Today's menu</h2>
-        <article class="card">
-          <h3>Beef pilau</h3>
-          <p>Spiced rice cooked with tender beef, served with kachumbari.Try our Supercalifragilisticexpialidocious special sauce.</p>
-          <p class="price">KSh 350</p>
-        </article>
-        <article class="card">
-          <h3>Chapati and beans</h3>
-          <p>Two soft chapatis with coconut beans.</p>
-          <p class="price">KSh 200</p>
-        </article>
-        <article class="card featured">
-          <h3>Githeri special</h3>
-          <p>Maize and beans fried with onions, tomatoes and avocado.</p>
-          <p class="price">KSh 250</p>
-        </article>
-        <article class="card featured">
+  <div class="menu-card">
+    <img
+      src="images/adrian-infernus-food.jpg"
+      alt="Grilled chicken served with rice and vegetables"
+      class="menu-card-image"
+    />
+    <h3>Grilled Chicken</h3>
+    <p>Served with rice, vegetables, and a side sauce.</p>
+    <p class="price">KSh 850</p>
+  </div>
+
+  <h2>Today's menu</h2>
+
+  <div class="menu-layout">
+    <div class="menu-list">
+      <article class="card">
+        <h3>Beef pilau</h3>
+        <p>
+          Spiced rice cooked with tender beef, served with kachumbari.
+          Try our Supercalifragilisticexpialidocious special sauce.
+        </p>
+        <p class="price">KSh 350</p>
+        <a class="button" href="#contact">Order</a>
+      </article>
+
+      <article class="card">
+        <h3>Chapati and beans</h3>
+        <p>Two soft chapatis with coconut beans.</p>
+        <p class="price">KSh 200</p>
+        <a class="button" href="#contact">Order</a>
+      </article>
+
+      <article class="card featured">
+        <h3>Githeri special</h3>
+        <p>Maize and beans fried with onions, tomatoes and avocado.</p>
+        <p class="price">KSh 250</p>
+        <a class="button" href="#contact">Order</a>
+      </article>
+
+      <article class="card featured">
         <span class="badge">Chef's choice</span>
-          <h3>Mukimo special</h3>
-          <p>A hearty maize-and-potato dish served with vegetables.</p>
-        </article>
+        <h3>Mukimo special</h3>
+        <p>A hearty maize-and-potato dish served with vegetables.</p>
+        <p class="price">KSh 300</p>
+        <a class="button" href="#contact">Order</a>
+      </article>
+    </div>
+
+    <aside class="opening-hours" aria-labelledby="opening-hours-title">
+      <h3 id="opening-hours-title">Opening hours</h3>
+      <p>Monday to Friday: 7 am – 9 pm</p>
+      <p>Saturday and Sunday: 8 am – 9 pm</p>
+      <p>Public holidays: 9 am – 8 pm</p>
+    </aside>
+  </div>
+</section>
     <article class="overlay-card">
         <img 
           src="images/Special-Githeri.jpg" width="1200px"
