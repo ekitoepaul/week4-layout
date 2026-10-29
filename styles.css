@@ -11,7 +11,6 @@
 
   --color-text: hsl(28 15% 15%);
   --color-text-light: hsl(28 15% 95%);
-
   --color-background: hsl(0 0% 100%);
   --color-surface: hsl(0 0% 100%);
   --color-link: hsl(28 90% 30%);
@@ -42,7 +41,7 @@
   --section-spacing: 3rem;
 
   /* Cards */
-  --card-padding: 1.5rem;
+  --card-padding: 1.25rem;
   --card-border: var(--color-border);
   --card-radius: 12px;
   --card-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
@@ -72,21 +71,18 @@ html {
 body {
   margin: 0;
   padding: 0;
-
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-normal);
   line-height: 1.6;
-
   color: var(--color-text);
   background-color: var(--color-background);
 }
 
-/* Headings */
-
 h1,
 h2,
 h3 {
+  margin-top: 0;
   font-family: var(--font-family-heading);
   color: var(--color-primary-dark);
   font-weight: var(--font-weight-bold);
@@ -95,46 +91,35 @@ h3 {
 }
 
 h1 {
-  font-size: var(--font-size-display);
-  margin-top: 0;
   margin-bottom: var(--space-4);
+  font-size: clamp(2rem, 8vw, var(--font-size-display));
 }
 
 h2 {
-  font-size: var(--font-size-heading);
-  margin-top: 0;
   margin-bottom: var(--space-4);
+  font-size: var(--font-size-heading);
 }
 
 h3 {
-  font-size: var(--font-size-large);
-  margin-top: 0;
   margin-bottom: var(--space-3);
+  font-size: var(--font-size-large);
 }
-
-/* Paragraphs */
 
 p {
+  max-width: 65ch;
   margin-top: 0;
   margin-bottom: var(--space-4);
-  max-width: 65ch;
 }
-
-/* Links */
 
 a {
   color: var(--color-link);
 }
-
-/* Images */
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-
-/* Reusable container */
 
 .container {
   width: min(100% - 2rem, 68rem);
@@ -149,73 +134,53 @@ img {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
-
-  padding: var(--space-4) var(--space-6);
-
-  background-color: var(--color-primary-dark);
+  padding: var(--space-4);
   color: var(--color-primary-tint);
-
+  background-color: var(--color-primary-dark);
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Header container */
-
 .site-header .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
 }
-
-/* Logo */
 
 .logo {
   margin: 0;
-
   color: var(--color-primary-tint);
   font-family: var(--font-family-heading);
   font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
-
   white-space: nowrap;
 }
 
-/* Navigation */
-
 .main-nav {
-  flex: 1;
-
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
-/* Navigation list */
-
 .nav-list {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: var(--space-4);
-
+  gap: var(--space-2);
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation links */
-
 .main-nav a {
   display: inline-block;
-
-  padding: var(--space-2) var(--space-3);
-
+  padding: var(--space-2);
   color: var(--color-primary-tint);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
-
   border-radius: 6px;
-
   transition:
     background-color 200ms ease,
     color 200ms ease;
@@ -230,15 +195,12 @@ img {
 .main-nav a:focus-visible {
   outline: 3px solid #f59e0b;
   outline-offset: 3px;
-
   background-color: rgb(255 255 255 / 0.12);
   color: #fff;
 }
 
-/* Order now button in navigation */
-
 .main-nav .button {
-  margin-left: var(--space-2);
+  margin-left: 0;
   white-space: nowrap;
 }
 
@@ -247,14 +209,11 @@ img {
    ========================================= */
 
 .hero {
-  min-height: 60vh;
-
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 4rem var(--space-6);
-
+  padding: 3rem var(--space-4);
   text-align: center;
   background-color: var(--color-primary-tint);
 }
@@ -274,18 +233,13 @@ img {
   margin-bottom: 0;
 }
 
-/* Eyebrow text */
-
 .eyebrow {
   margin-bottom: var(--space-3);
-
   font-family: var(--font-family-base);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
-
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
   color: var(--color-primary);
 }
 
@@ -295,22 +249,16 @@ img {
 
 .button {
   display: inline-block;
-
   padding: var(--space-3) var(--space-6);
-
   color: #fff;
   background-color: var(--color-primary);
-
   border: 2px solid var(--color-primary);
   border-radius: 6px;
-
   font: inherit;
   font-weight: var(--font-weight-bold);
   text-align: center;
   text-decoration: none;
-
   cursor: pointer;
-
   transition:
     background-color 200ms ease,
     border-color 200ms ease,
@@ -331,8 +279,6 @@ img {
   transform: scale(0.97);
 }
 
-/* Secondary button */
-
 .button--secondary {
   color: var(--color-primary);
   background-color: transparent;
@@ -345,15 +291,17 @@ img {
   border-color: var(--color-primary-light);
 }
 
-/* Hero buttons */
-
 .hero__actions {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: var(--space-3);
-
   margin-top: var(--space-6);
+}
+
+.hero__actions .button {
+  width: 100%;
 }
 
 /* =========================================
@@ -361,7 +309,7 @@ img {
    ========================================= */
 
 .order-section {
-  padding: var(--section-spacing) var(--space-6);
+  padding: var(--section-spacing) var(--space-4);
   text-align: center;
 }
 
@@ -375,21 +323,14 @@ img {
   margin-bottom: var(--space-4);
 }
 
-/* WhatsApp order button */
-
 .whatsapp-button {
   display: inline-block;
-
   padding: var(--space-3) var(--space-5);
-
   color: #fff;
   background-color: #15803d;
-
   border-radius: 999px;
-
   font-weight: var(--font-weight-bold);
   text-decoration: none;
-
   transition:
     background-color 200ms ease,
     transform 100ms ease;
@@ -409,7 +350,7 @@ img {
    ========================================= */
 
 #menu {
-  padding: var(--section-spacing) var(--space-6);
+  padding: var(--section-spacing) var(--space-4);
 }
 
 .menu-section > .container > h2 {
@@ -425,24 +366,28 @@ img {
    8. MENU LAYOUT
    ========================================= */
 
+/* Mobile: menu and opening hours stack vertically */
 .menu-layout {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
   gap: var(--space-6);
 }
 
-/* Menu card collection */
-
-.menu-list {
-  flex: 1 1 40rem;
+.menu-layout > .menu-list,
+.menu-layout > .menu-sidebar {
+  flex: 1 1 auto;
+  width: 100%;
   min-width: 0;
+}
 
+/* Menu cards: one column by default */
+.menu-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-
+  grid-template-columns: 1fr;
   align-items: stretch;
   gap: var(--space-6);
+  min-width: 0;
 }
 
 /* =========================================
@@ -451,72 +396,48 @@ img {
 
 .card {
   position: relative;
-
   display: flex;
   flex-direction: column;
-
   min-width: 0;
   overflow: hidden;
-
   background-color: var(--color-primary-tint);
-
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-
   box-shadow: var(--card-shadow);
-
   transition:
     transform 200ms ease-out,
     box-shadow 200ms ease-out;
 }
 
-/* Card hover */
-
 .card:hover {
   transform: translateY(-4px);
-
   box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
 }
 
-/* Card image */
-
 .card__image {
   display: block;
-
   width: 100%;
   height: 200px;
-
   object-fit: cover;
 }
-
-/* Card content */
 
 .card__content {
   display: flex;
   flex-direction: column;
   flex: 1;
-
   min-width: 0;
-
   padding: var(--card-padding);
 }
-
-/* Card headings */
 
 .card h3 {
   margin-top: 0;
   margin-bottom: var(--space-3);
-
   overflow-wrap: anywhere;
 }
-
-/* Card descriptions */
 
 .card p {
   overflow-wrap: anywhere;
 }
-
-/* Card price */
 
 .price {
   color: #15803d;
@@ -524,45 +445,30 @@ img {
   white-space: nowrap;
 }
 
-/* Order button inside card */
-
 .card .button {
   align-self: flex-start;
   margin-top: auto;
 }
 
-/* Featured card */
-
 .card.featured {
   border-color: var(--color-primary-light);
 }
-
-/* Badge */
 
 .badge {
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
-
   z-index: var(--z-badge);
-
   display: inline-block;
-
   padding: 0.35rem var(--space-3);
-
   color: #111;
   background-color: #ffd166;
-
   border-radius: 999px;
-
   font-size: 0.72rem;
   font-weight: var(--font-weight-bold);
-
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-
-/* Old price */
 
 .old-price {
   text-decoration: line-through;
@@ -573,23 +479,43 @@ img {
    ========================================= */
 
 .opening-hours {
-  flex: 1 1 15rem;
+  box-sizing: border-box;
   min-width: 0;
-
-  padding: var(--card-padding);
-
-  background-color: var(--color-primary-tint);
-
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  color: #33251b;
+  background-color: #fff8ef;
+  border: 1px solid #e6cdb3;
+  border-left: 4px solid #a34b08;
+  border-radius: 0.75rem;
+  overflow-wrap: anywhere;
 }
 
 .opening-hours h3 {
-  margin-top: 0;
+  margin: 0 0 1rem;
+  color: #823b06;
+  font-size: 1.25rem;
+  line-height: 1.3;
 }
 
-.opening-hours p {
-  margin-bottom: var(--space-3);
+.opening-hours-list {
+  margin: 0;
+}
+
+.opening-hours-item + .opening-hours-item {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e6cdb3;
+}
+
+.opening-hours-item dt {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.opening-hours-item dd {
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* =========================================
@@ -597,45 +523,35 @@ img {
    ========================================= */
 
 .about-section {
-  padding: var(--section-spacing) var(--space-6);
+  padding: var(--section-spacing) var(--space-4);
 }
 
 .about-section h2 {
   text-align: center;
 }
 
-/* Media object */
-
+/* Mobile: image above the about text */
 .media {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-6);
-
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-4);
   max-width: 60rem;
   margin-inline: auto;
-
-  padding: var(--card-padding);
-
+  padding: var(--space-4);
   background-color: var(--color-primary-tint);
-
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
 }
 
-/* Cook's photo */
-
 .media__image {
-  flex: 0 0 250px;
-
-  width: 250px;
-  height: 250px;
-
+  flex: none;
+  width: 100%;
+  height: auto;
+  max-height: 350px;
   object-fit: cover;
-
   border-radius: 8px;
 }
-
-/* About text */
 
 .media__content {
   flex: 1;
@@ -655,8 +571,7 @@ img {
    ========================================= */
 
 #contact {
-  padding: var(--section-spacing) var(--space-6);
-
+  padding: var(--section-spacing) var(--space-4);
   background-color: var(--color-primary-tint);
 }
 
@@ -677,85 +592,57 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-
   max-width: 32rem;
   margin-inline: auto;
 }
 
-/* Labels */
-
 .contact-form label {
   display: block;
-
   margin-top: var(--space-3);
   margin-bottom: var(--space-1);
-
   font-weight: var(--font-weight-bold);
 }
-
-/* Form controls */
 
 .contact-form input,
 .contact-form textarea {
   display: block;
-
   width: 100%;
   max-width: 32rem;
-
   padding: var(--space-3);
-
   color: #1f2937;
   background-color: var(--color-surface);
-
   border: 1px solid #6b7280;
   border-radius: 6px;
-
   font: inherit;
-
   transition:
     border-color 200ms ease,
     box-shadow 200ms ease;
 }
 
-/* Textarea */
-
 .contact-form textarea {
   resize: vertical;
 }
 
-/* Focus states */
-
 .contact-form input:focus-visible,
 .contact-form textarea:focus-visible {
   border-color: var(--color-primary);
-
   outline: 3px solid var(--color-primary-light);
   outline-offset: 2px;
-
   box-shadow: 0 0 0 3px rgb(230 126 34 / 0.25);
 }
-
-/* Invalid email */
 
 .contact-form input[type="email"]:user-invalid {
   border-color: #dc2626;
   background-color: #fef2f2;
-
   box-shadow: 0 0 0 3px rgb(220 38 38 / 0.2);
 }
 
-/* Email error message utility */
-
 .email-error {
   display: none;
-
   margin-top: 0.35rem;
-
   color: #dc2626;
   font-size: var(--font-size-small);
 }
-
-/* Submit button */
 
 .contact-form button {
   align-self: flex-start;
@@ -767,11 +654,9 @@ img {
    ========================================= */
 
 .site-footer {
-  padding: var(--space-8) var(--space-6);
-
+  padding: var(--space-8) var(--space-4);
   color: var(--color-primary-tint);
   background-color: var(--color-primary-dark);
-
   text-align: center;
 }
 
@@ -783,153 +668,175 @@ img {
    15. UTILITY CLASSES
    ========================================= */
 
-/* Hide an element */
-
 .is-hidden {
   display: none;
 }
 
 /* Visually hide text but keep it accessible */
-
 .visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
-
   padding: 0;
   margin: -1px;
-
   overflow: hidden;
-
   clip-path: inset(50%);
-
   white-space: nowrap;
-
   border: 0;
 }
 
 /* =========================================
    16. RESPONSIVE DESIGN
+   Mobile-first: larger layouts are added with min-width
    ========================================= */
 
-/* Tablet and smaller screens */
-
-@media (max-width: 800px) {
-  /* Header */
+/* Small tablet and larger: wider header, hero, cards */
+@media (min-width: 600px) {
+  .site-header {
+    padding-inline: var(--space-6);
+  }
 
   .site-header .container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
   }
 
   .main-nav {
-    width: 100%;
-    justify-content: flex-start;
+    width: auto;
+    flex: 1;
+    justify-content: flex-end;
   }
 
   .nav-list {
-    flex-wrap: wrap;
-  }
-
-  /* Menu */
-
-  .menu-layout {
-    flex-direction: column;
-  }
-
-  .menu-list {
-    width: 100%;
-    flex-basis: auto;
-  }
-
-  .opening-hours {
-    width: 100%;
-    flex-basis: auto;
-  }
-}
-
-/* Mobile screens */
-
-@media (max-width: 600px) {
-  /* Header */
-
-  .site-header {
-    padding: var(--space-4);
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-  }
-
-  .main-nav a {
-    padding: var(--space-2);
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
   }
 
   .main-nav .button {
-    margin-left: 0;
+    margin-left: var(--space-2);
   }
-
-  /* Hero */
 
   .hero {
-    min-height: auto;
-    padding: 3rem var(--space-4);
-  }
-
-  .hero h1 {
-    font-size: 2rem;
+    min-height: 60vh;
+    padding: 4rem var(--space-6);
   }
 
   .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero__actions .button {
-    width: 100%;
+    width: auto;
   }
 
-  /* Sections */
+  .menu-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   #menu,
   #contact,
   .about-section,
   .order-section {
-    padding: var(--space-8) var(--space-4);
+    padding-inline: var(--space-6);
   }
-
-  /* Menu cards */
-
-  .menu-list {
-    grid-template-columns: 1fr;
-  }
-
-  /* About media object */
 
   .media {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-4);
+    padding: var(--card-padding);
+  }
+}
 
-    padding: var(--space-4);
+/* Desktop: menu beside opening hours, wider card collection */
+@media (min-width: 768px) {
+  .menu-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .menu-layout > .menu-list {
+    flex: 3 1 0;
+    width: auto;
+  }
+
+  .menu-layout > .menu-sidebar {
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  .menu-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .media {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-6);
   }
 
   .media__image {
-    flex: none;
+    flex: 0 0 250px;
+    width: 250px;
+    height: 250px;
+    max-height: none;
+  }
+}
 
-    width: 100%;
-    height: auto;
+/* Wide desktop: three menu cards across */
+@media (min-width: 1024px) {
+  .menu-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
-    max-height: 350px;
+  .hero {
+    padding-block: 5rem;
   }
 }
 
 /* =========================================
-   17. REDUCED MOTION ACCESSIBILITY
+   17. PRINT STYLES
+   ========================================= */
+
+@media print {
+  /* Hide header navigation */
+  .header-nav,
+  .main-nav {
+    display: none !important;
+  }
+
+  /* Hide WhatsApp button */
+  .whatsapp-button {
+    display: none !important;
+  }
+
+  /* Hide contact form */
+  .contact-form {
+    display: none !important;
+  }
+
+  /* Avoid printing sticky/fixed header behavior */
+  .site-header {
+    position: static;
+  }
+
+  /* Remove unnecessary visual effects from print */
+  .card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* =========================================
+   18. REDUCED MOTION ACCESSIBILITY
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -938,9 +845,7 @@ img {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-
     transition-duration: 0.01ms !important;
-
     scroll-behavior: auto !important;
   }
 }
