@@ -1,455 +1,362 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mama Njeri's Kitchen</title>
+    <title>Mama Njeri's Kitchen</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap"
-    rel="stylesheet"
-  >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-
-    <div class="container">
-
-      <p class="logo">Mama Njeri's Kitchen</p>
-
-      <!-- Navigation using list structure -->
-      <nav class="main-nav" aria-label="Main navigation">
-
-        <ul class="nav-list">
-          <li>
-            <a href="#menu">Menu</a>
-          </li>
-
-          <li>
-            <a href="#about">About us</a>
-          </li>
-
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-
-          <li>
-            <a class="button" href="#contact">Order now</a>
-          </li>
-        </ul>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <!-- MAIN CONTENT -->
-  <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
       <div class="container">
+        <p class="logo">Mama Njeri's Kitchen</p>
 
-        <p class="eyebrow">Since 2015</p>
+        <!-- Navigation using list structure -->
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
 
-        <h1>Home-cooked food in Nakuru since 2015</h1>
+            <li>
+              <a href="#about">About us</a>
+            </li>
 
-        <p>
-          Pilau, chapati, githeri and fresh juice,
-          made fresh every morning.
-        </p>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
 
-        <div class="hero__actions">
+            <li>
+              <a class="button" href="#contact">Order now</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-          <a class="button" href="#menu">
-            See today's menu
-          </a>
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">Since 2015</p>
+
+          <h1>Home-cooked food in Nakuru since 2015</h1>
+
+          <p>
+            Pilau, chapati, githeri and fresh juice, made fresh every morning.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button" href="#menu"> See today's menu </a>
+
+            <a class="button button--secondary" href="tel:+254717544278">
+              Call us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORDER SECTION -->
+      <section class="order-section">
+        <div class="container">
+          <h2>Place your order</h2>
+
+          <p>Enjoy fresh, delicious meals prepared with love.</p>
 
           <a
-            class="button button--secondary"
-            href="tel:+254717544278"
+            class="whatsapp-button"
+            href="https://wa.me/254712345678?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order."
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Call us
+            Order on WhatsApp
           </a>
 
+          <a class="button button--secondary" href="tel:+254712345678">
+            Call us
+          </a>
         </div>
+      </section>
+
+      <section class="container">
+        <h2>12-Column Grid Test</h2>
 
-      </div>
+        <div class="grid-12-test">
+          <div class="span-8">8 columns</div>
+          <div class="span-4">4 columns</div>
+        </div>
+      </section>
+
+      <!-- MENU SECTION -->
+      <section id="menu" class="menu-section">
+        <div class="container">
+          <h2>Today's menu</h2>
+
+          <p>Explore our delicious homemade meals.</p>
+
+          <div class="menu-layout">
+            <!-- MENU LIST -->
+            <div class="menu-list">
+              <!-- MENU CARD 1 -->
+              <article class="card">
+                <img
+                  src="images/Beef_Pilau_Kachumbari.webp"
+                  alt="Beef pilau served with fresh kachumbari"
+                  class="card__image"
+                />
+
+                <div class="card__content">
+                  <h3>Beef Pilau</h3>
+
+                  <p>
+                    Spiced rice cooked with tender beef, served with fresh
+                    kachumbari.
+                  </p>
+
+                  <p class="price">KSh 350</p>
+
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
+
+              <!-- MENU CARD 2 -->
+              <article class="card">
+                <img
+                  src="images/Chapati_Coconutbeans.avif"
+                  alt="Chapati served with coconut beans"
+                  class="card__image"
+                />
+
+                <div class="card__content">
+                  <h3>Chapati and Beans</h3>
+
+                  <p>Two soft chapatis served with delicious coconut beans.</p>
+
+                  <p class="price">KSh 200</p>
+
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
+
+              <!-- MENU CARD 3 -->
+              <article class="card featured">
+                <img
+                  src="images/Special-Githeri.jpg"
+                  alt="Githeri served with fresh vegetables"
+                  class="card__image"
+                />
+
+                <div class="card__content">
+                  <span class="badge">Chef's choice</span>
+
+                  <h3>Githeri Special</h3>
+
+                  <p>
+                    Maize and beans fried with onions, tomatoes and avocado.
+                  </p>
+
+                  <p class="price">KSh 250</p>
+
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
+
+              <!-- MENU CARD 4 -->
+              <article class="card featured">
+                <img
+                  src="images/Traditional_Mukimo.avif"
+                  alt="Traditional mukimo served with vegetables"
+                  class="card__image"
+                />
+
+                <div class="card__content">
+                  <span class="badge">Chef's choice</span>
+
+                  <h3>Mukimo Special</h3>
+
+                  <p>
+                    A hearty maize-and-potato dish served with fresh vegetables.
+                  </p>
 
-    </section>
+                  <p class="price">KSh 300</p>
 
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
 
-    <!-- ORDER SECTION -->
-    <section class="order-section">
+              <!-- MENU CARD 5 -->
+              <article class="card">
+                <img
+                  src="images/adrian-infernus-food.jpg"
+                  alt="Grilled chicken served with rice and vegetables"
+                  class="card__image"
+                />
 
-      <div class="container">
+                <div class="card__content">
+                  <h3>Grilled Chicken</h3>
 
-        <h2>Place your order</h2>
+                  <p>
+                    Grilled chicken served with rice, vegetables and a side
+                    sauce.
+                  </p>
 
-        <p>
-          Enjoy fresh, delicious meals prepared with love.
-        </p>
+                  <p class="price">KSh 850</p>
 
-        <a
-          class="whatsapp-button"
-          href="https://wa.me/254712345678?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Order on WhatsApp
-        </a>
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
 
-        <a
-          class="button button--secondary"
-          href="tel:+254712345678"
-        >
-          Call us
-        </a>
+              <!-- MENU CARD 6 -->
+              <article class="card">
+                <img
+                  src="images/Fried_Eggs.jpg"
+                  alt="Fried eggs served with vegetables"
+                  class="card__image"
+                />
 
-      </div>
+                <div class="card__content">
+                  <h3>Fried Eggs</h3>
 
-    </section>
+                  <p>Fried eggs served with vegetables and a side sauce.</p>
 
+                  <p class="price">KSh 350</p>
 
-    <!-- MENU SECTION -->
-    <section id="menu" class="menu-section">
+                  <a class="button" href="#contact"> Order </a>
+                </div>
+              </article>
+            </div>
 
-      <div class="container">
-
-        <h2>Today's menu</h2>
-
-        <p>
-          Explore our delicious homemade meals.
-        </p>
-
-        <div class="menu-layout">
-
-          <!-- MENU LIST -->
-          <div class="menu-list">
-
-
-            <!-- MENU CARD 1 -->
-            <article class="card">
-
-              <img
-                src="images/Beef_Pilau_Kachumbari.webp"
-                alt="Beef pilau served with fresh kachumbari"
-                class="card__image"
-              >
-
-              <div class="card__content">
-
-                <h3>Beef Pilau</h3>
-
-                <p>
-                  Spiced rice cooked with tender beef,
-                  served with fresh kachumbari.
-                </p>
-
-                <p class="price">KSh 350</p>
-
-                <a class="button" href="#contact">
-                  Order
-                </a>
-
-              </div>
-
-            </article>
-
-
-            <!-- MENU CARD 2 -->
-            <article class="card">
-
-              <img
-                src="images/Chapati_Coconutbeans.avif"
-                alt="Chapati served with coconut beans"
-                class="card__image"
-              >
-
-              <div class="card__content">
-
-                <h3>Chapati and Beans</h3>
-
-                <p>
-                  Two soft chapatis served with
-                  delicious coconut beans.
-                </p>
-
-                <p class="price">KSh 200</p>
-
-                <a class="button" href="#contact">
-                  Order
-                </a>
-
-              </div>
-
-            </article>
-
-
-            <!-- MENU CARD 3 -->
-            <article class="card featured">
-
-              <img
-                src="images/Special-Githeri.jpg"
-                alt="Githeri served with fresh vegetables"
-                class="card__image"
-              >
-
-              <div class="card__content">
-
-                <span class="badge">Chef's choice</span>
-
-                <h3>Githeri Special</h3>
-
-                <p>
-                  Maize and beans fried with onions,
-                  tomatoes and avocado.
-                </p>
-
-                <p class="price">KSh 250</p>
-
-                <a class="button" href="#contact">
-                  Order
-                </a>
-
-              </div>
-
-            </article>
-
-
-            <!-- MENU CARD 4 -->
-            <article class="card featured">
-
-              <img
-                src="images/Traditional_Mukimo.avif"
-                alt="Traditional mukimo served with vegetables"
-                class="card__image"
-              >
-
-              <div class="card__content">
-
-                <span class="badge">Chef's choice</span>
-
-                <h3>Mukimo Special</h3>
-
-                <p>
-                  A hearty maize-and-potato dish
-                  served with fresh vegetables.
-                </p>
-
-                <p class="price">KSh 300</p>
-
-                <a class="button" href="#contact">
-                  Order
-                </a>
-
-              </div>
-
-            </article>
-
-
-            <!-- MENU CARD 5 -->
-            <article class="card">
-
-              <img
-                src="images/adrian-infernus-food.jpg"
-                alt="Grilled chicken served with rice and vegetables"
-                class="card__image"
-              >
-
-              <div class="card__content">
-
-                <h3>Grilled Chicken</h3>
-
-                <p>
-                  Grilled chicken served with rice,
-                  vegetables and a side sauce.
-                </p>
-
-                <p class="price">KSh 850</p>
-
-                <a class="button" href="#contact">
-                  Order
-                </a>
-
-              </div>
-
-            </article>
-
-          </div>
-
-
-          <!-- OPENING HOURS -->
-           <aside
+            <!-- OPENING HOURS -->
+            <aside
               class="opening-hours menu-sidebar"
-              aria-labelledby="opening-hours-title">
-            <h3 id="opening-hours-title">Opening hours</h3>
-       <dl class="opening-hours-list">
-           <div class="opening-hours-item">
-            <dt>Monday to Friday</dt>
-             <dd>7 am – 9 pm</dd>
-    </div>
+              aria-labelledby="opening-hours-title"
+            >
+              <h3 id="opening-hours-title">Opening hours</h3>
+              <dl class="opening-hours-list">
+                <div class="opening-hours-item">
+                  <dt>Monday to Friday</dt>
+                  <dd>7 am – 9 pm</dd>
+                </div>
 
-         <div class="opening-hours-item">
-           <dt>Saturday and Sunday</dt>
-           <dd>8 am – 9 pm</dd>
+                <div class="opening-hours-item">
+                  <dt>Saturday and Sunday</dt>
+                  <dd>8 am – 9 pm</dd>
+                </div>
+
+                <div class="opening-hours-item">
+                  <dt>Public holidays</dt>
+                  <dd>9 am – 8 pm</dd>
+                </div>
+              </dl>
+            </aside>
           </div>
-
-         <div class="opening-hours-item">
-          <dt>Public holidays</dt>
-          <dd>9 am – 8 pm</dd>
-      </div>
-        </dl>
-  </aside>
-
         </div>
+      </section>
 
-      </div>
+      <!-- ABOUT SECTION WITH MEDIA OBJECT -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2>About us</h2>
 
-    </section>
+          <!-- Media object -->
+          <article class="media">
+            <img
+              src="images/A cook.avif"
+              alt="A cook preparing a fresh homemade meal"
+              class="media__image"
+            />
 
+            <div class="media__content">
+              <h3>Cooking with love since 2015</h3>
 
-    <!-- ABOUT SECTION WITH MEDIA OBJECT -->
-    <section id="about" class="about-section">
+              <p>
+                We opened with one jiko and two tables. Today, we serve more
+                than
+                <strong>200 customers</strong> a day.
+              </p>
 
+              <p>
+                At Mama Njeri's Kitchen, we believe everyone deserves a fresh,
+                delicious and affordable homemade meal.
+              </p>
+
+              <p>
+                Our meals are prepared daily using fresh ingredients and
+                traditional Kenyan recipes.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2>Contact us</h2>
+
+          <p>Have a question or want to place an order? Send us a message.</p>
+
+          <form class="contact-form">
+            <label for="firstname">First name</label>
+
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              autocomplete="given-name"
+              required
+            />
+
+            <label for="lastname">Last name</label>
+
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              autocomplete="family-name"
+              required
+            />
+
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="message">Message</label>
+
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
       <div class="container">
-
-        <h2>About us</h2>
-
-        <!-- Media object -->
-        <article class="media">
-
-          <img
-            src="images/A cook.avif"
-            alt="A cook preparing a fresh homemade meal"
-            class="media__image"
-          >
-
-          <div class="media__content">
-
-            <h3>Cooking with love since 2015</h3>
-
-            <p>
-              We opened with one jiko and two tables.
-              Today, we serve more than
-              <strong>200 customers</strong> a day.
-            </p>
-
-            <p>
-              At Mama Njeri's Kitchen, we believe
-              everyone deserves a fresh, delicious
-              and affordable homemade meal.
-            </p>
-
-            <p>
-              Our meals are prepared daily using
-              fresh ingredients and traditional
-              Kenyan recipes.
-            </p>
-
-          </div>
-
-        </article>
-
+        <p>&copy; 2026 Mama Njeri's Kitchen. Open daily, 7 am to 9 pm.</p>
       </div>
-
-    </section>
-
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-
-      <div class="container">
-
-        <h2>Contact us</h2>
-
-        <p>
-          Have a question or want to place an order?
-          Send us a message.
-        </p>
-
-        <form class="contact-form">
-
-          <label for="firstname">First name</label>
-
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            autocomplete="given-name"
-            required
-          >
-
-          <label for="lastname">Last name</label>
-
-          <input
-            type="text"
-            id="lastname"
-            name="lastname"
-            autocomplete="family-name"
-            required
-          >
-
-          <label for="email">Email</label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            required
-          >
-
-          <label for="message">Message</label>
-
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            required
-          ></textarea>
-
-          <button type="submit">
-            Send message
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="container">
-
-      <p>
-        &copy; 2026 Mama Njeri's Kitchen.
-        Open daily, 7 am to 9 pm.
-      </p>
-
-    </div>
-
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>

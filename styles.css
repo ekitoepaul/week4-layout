@@ -8,7 +8,6 @@
   --color-primary-light: hsl(28 76% 56%);
   --color-primary-dark: hsl(28 92% 22%);
   --color-primary-tint: hsl(28 67% 94%);
-
   --color-text: hsl(28 15% 15%);
   --color-text-light: hsl(28 15% 95%);
   --color-background: hsl(0 0% 100%);
@@ -19,13 +18,11 @@
   /* Typography */
   --font-family-base: "Inter", Arial, sans-serif;
   --font-family-heading: "Playfair Display", Georgia, serif;
-
   --font-size-small: 0.875rem;
   --font-size-body: 1rem;
   --font-size-large: 1.25rem;
   --font-size-heading: 1.5rem;
   --font-size-display: 2.5rem;
-
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
@@ -37,7 +34,6 @@
   --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
-
   --section-spacing: 3rem;
 
   /* Cards */
@@ -54,7 +50,9 @@
 }
 
 /* =========================================
-   2. RESET AND BASE STYLES
+   2. RESET, BASE STYLES AND STICKY FOOTER
+   Requires header, main and footer as direct
+   children of body.
    ========================================= */
 
 *,
@@ -69,6 +67,10 @@ html {
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   font-family: var(--font-family-base);
@@ -84,10 +86,10 @@ h2,
 h3 {
   margin-top: 0;
   font-family: var(--font-family-heading);
-  color: var(--color-primary-dark);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
 }
 
 h1 {
@@ -128,18 +130,15 @@ img {
 
 /* =========================================
    3. HEADER AND NAVIGATION
-   Mobile-first header
    ========================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
-
   padding: var(--space-3);
   color: var(--color-primary-tint);
   background-color: var(--color-primary-dark);
-
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -148,32 +147,24 @@ img {
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3);
-
   min-width: 0;
 }
 
-/* Logo */
-
 .logo {
   margin: 0;
-
   color: var(--color-primary-tint);
   font-family: var(--font-family-heading);
   font-size: clamp(1.25rem, 5vw, 1.5rem);
   font-weight: var(--font-weight-bold);
-
   overflow-wrap: anywhere;
 }
 
-/* Navigation */
-
 .main-nav {
-  width: 100%;
-  min-width: 0;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .nav-list {
@@ -181,84 +172,37 @@ img {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-2);
-
   width: 100%;
-
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-
-/* Navigation links */
 
 .main-nav a {
   display: flex;
   align-items: center;
-
   min-height: 44px;
   padding: var(--space-2) var(--space-3);
-
   color: var(--color-primary-tint);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
-
   border-radius: 6px;
 }
-
-/* Keyboard focus */
 
 .main-nav a:focus-visible {
   outline: 3px solid #f59e0b;
   outline-offset: 3px;
 }
 
-/* Tablet and wider */
-
-@media (min-width: 768px) {
-  .site-header {
-    padding: var(--space-4) var(--space-6);
-  }
-
-  .site-header .container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-  }
-
-  .main-nav {
-    flex: 1;
-    justify-content: flex-end;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: var(--space-2);
-  }
-}
 /* =========================================
    4. HERO SECTION
    ========================================= */
 
-/* =========================================
-   HERO SECTION
-   ========================================= */
-
-.hero h1 {
-  max-width: 18ch;
-  margin-bottom: var(--space-4);
-
-  /* Fluid heading */
-  font-size: clamp(2rem, 5vw + 1rem, 4rem);
-}
 .hero {
-  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: auto;
   padding: 3rem var(--space-4);
   text-align: center;
   background-color: var(--color-primary-tint);
@@ -273,6 +217,7 @@ img {
 .hero h1 {
   max-width: 18ch;
   margin-bottom: var(--space-4);
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
 }
 
 .hero p {
@@ -281,20 +226,29 @@ img {
 
 .eyebrow {
   margin-bottom: var(--space-3);
+  color: var(--color-primary);
   font-family: var(--font-family-base);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-primary);
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+.hero__actions .button {
+  width: 100%;
 }
 
 /* =========================================
-   5. BUTTONS
-   ========================================= */
-
-/* =========================================
-   ACCESSIBILITY AND TAP TARGETS
+   5. BUTTONS AND ACCESSIBILITY
    ========================================= */
 
 .button,
@@ -317,7 +271,6 @@ button:focus-visible {
 }
 
 .button {
-  display: inline-block;
   padding: var(--space-3) var(--space-6);
   color: #fff;
   background-color: var(--color-primary);
@@ -339,11 +292,6 @@ button:focus-visible {
   border-color: var(--color-primary-dark);
 }
 
-.button:focus-visible {
-  outline: 3px solid #f59e0b;
-  outline-offset: 3px;
-}
-
 .button:active {
   transform: scale(0.97);
 }
@@ -358,19 +306,6 @@ button:focus-visible {
   color: #fff;
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
-}
-
-.hero__actions {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: var(--space-3);
-  margin-top: var(--space-6);
-}
-
-.hero__actions .button {
-  width: 100%;
 }
 
 /* =========================================
@@ -393,7 +328,6 @@ button:focus-visible {
 }
 
 .whatsapp-button {
-  display: inline-block;
   padding: var(--space-3) var(--space-5);
   color: #fff;
   background-color: #15803d;
@@ -409,13 +343,10 @@ button:focus-visible {
   background-color: #166534;
 }
 
-.whatsapp-button:focus-visible {
-  outline: 3px solid #f59e0b;
-  outline-offset: 3px;
-}
-
 /* =========================================
-   7. MENU SECTION
+   7. MENU SECTION AND GRID LAYOUT
+   One column on mobile.
+   At 48rem: menu + 16rem sidebar.
    ========================================= */
 
 #menu {
@@ -431,62 +362,33 @@ button:focus-visible {
   text-align: center;
 }
 
-/* =========================================
-   8. MENU LAYOUT
-   ========================================= */
-
-/* Mobile: menu and opening hours stack vertically */
 .menu-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: var(--space-6);
-}
-
-.menu-layout > .menu-list,
-.menu-layout > .menu-sidebar {
-  flex: 1 1 auto;
-  width: 100%;
-  min-width: 0;
-}
-
-/* Menu cards: one column by default */
-.menu-list {
   display: grid;
-  grid-template-columns: 1fr;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-6);
+  align-items: start;
+}
+
+.menu-list,
+.menu-sidebar {
+  min-width: 0;
+}
+
+/* Menu cards within the main menu area */
+
+.menu-list,
+.card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: var(--space-4);
   min-width: 0;
 }
 
 /* =========================================
-   9. MENU CARDS
+   8. MENU CARDS
    ========================================= */
 
-/* =========================================
-   MENU CARD IMAGES
-   ========================================= */
-
-.card__image {
-  display: block;
-
-  width: 100%;
-  aspect-ratio: 4 / 3;
-
-  object-fit: cover;
-}
-/* =========================================
-   CARD HOVER EFFECTS
-   Only apply hover on devices that support it
-   ========================================= */
-
-@media (hover: hover) {
-  .card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
-  }
-}
 .card {
   position: relative;
   display: flex;
@@ -502,23 +404,20 @@ button:focus-visible {
     box-shadow 200ms ease-out;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+  }
 }
-
-/* =========================================
-   MENU CARD IMAGES
-   ========================================= */
 
 .card__image {
   display: block;
-
   width: 100%;
   aspect-ratio: 4 / 3;
-
   object-fit: cover;
 }
+
 .card__content {
   display: flex;
   flex-direction: column;
@@ -573,11 +472,10 @@ button:focus-visible {
 }
 
 /* =========================================
-   10. OPENING HOURS
+   9. OPENING HOURS
    ========================================= */
 
 .opening-hours {
-  box-sizing: border-box;
   min-width: 0;
   padding: 1.5rem;
   color: #33251b;
@@ -617,7 +515,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   11. ABOUT SECTION
+   10. ABOUT SECTION
    ========================================= */
 
 .about-section {
@@ -628,7 +526,6 @@ button:focus-visible {
   text-align: center;
 }
 
-/* Mobile: image above the about text */
 .media {
   display: flex;
   flex-direction: column;
@@ -665,7 +562,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   12. CONTACT SECTION
+   11. CONTACT SECTION AND FORM
    ========================================= */
 
 #contact {
@@ -682,22 +579,18 @@ button:focus-visible {
   text-align: center;
 }
 
-/* =========================================
-   13. CONTACT FORM
-   ========================================= */
-
 .contact-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-3);
+  width: 100%;
   max-width: 32rem;
   margin-inline: auto;
 }
 
 .contact-form label {
   display: block;
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-1);
+  margin: 0;
   font-weight: var(--font-weight-bold);
 }
 
@@ -705,7 +598,8 @@ button:focus-visible {
 .contact-form textarea {
   display: block;
   width: 100%;
-  max-width: 32rem;
+  min-width: 0;
+  max-width: 100%;
   padding: var(--space-3);
   color: #1f2937;
   background-color: var(--color-surface);
@@ -737,18 +631,18 @@ button:focus-visible {
 
 .email-error {
   display: none;
-  margin-top: 0.35rem;
+  margin: 0;
   color: #dc2626;
   font-size: var(--font-size-small);
 }
 
 .contact-form button {
-  align-self: flex-start;
-  margin-top: var(--space-4);
+  justify-self: start;
+  margin: 0;
 }
 
 /* =========================================
-   14. FOOTER
+   12. FOOTER
    ========================================= */
 
 .site-footer {
@@ -763,14 +657,13 @@ button:focus-visible {
 }
 
 /* =========================================
-   15. UTILITY CLASSES
+   13. UTILITY CLASSES
    ========================================= */
 
 .is-hidden {
   display: none;
 }
 
-/* Visually hide text but keep it accessible */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -784,57 +677,55 @@ button:focus-visible {
 }
 
 /* =========================================
-   16. RESPONSIVE DESIGN
-   Mobile-first: larger layouts are added with min-width
+   14. 12-COLUMN GRID TEST
+   Use these classes on a test section.
    ========================================= */
 
-/* Small tablet and larger: wider header, hero, cards */
-@media (min-width: 600px) {
-  .site-header {
-    padding-inline: var(--space-6);
-  }
+.grid-12-test {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-3);
+  width: 100%;
+  margin-block: var(--space-6);
+}
 
-  .site-header .container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-6);
-  }
+.grid-12-test > * {
+  min-width: 0;
+  padding: var(--space-4);
+  background-color: var(--color-primary-tint);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
 
-  .main-nav {
-    width: auto;
-    flex: 1;
-    justify-content: flex-end;
-  }
+.span-8 {
+  grid-column: span 8;
+}
 
-  .nav-list {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-3);
-  }
+.span-4 {
+  grid-column: span 4;
+}
 
-  .main-nav .button {
-    margin-left: var(--space-2);
-  }
+/* =========================================
+   15. RESPONSIVE DESIGN
+   ========================================= */
 
+/* Wider phones and small tablets */
+
+@media (min-width: 37.5rem) {
   .hero {
-    min-height: 60vh;
     padding: 4rem var(--space-6);
   }
 
   .hero__actions {
-    width: auto;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: auto;
   }
 
   .hero__actions .button {
     width: auto;
-  }
-
-  .menu-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   #menu,
@@ -849,24 +740,49 @@ button:focus-visible {
   }
 }
 
-/* Desktop: menu beside opening hours, wider card collection */
-@media (min-width: 768px) {
-  .menu-layout {
+/* Tablet: 48rem = 768px */
+
+@media (min-width: 48rem) {
+  .site-header {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .site-header .container {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
   }
 
-  .menu-layout > .menu-list {
-    flex: 3 1 0;
+  .main-nav {
+    flex: 1;
+    justify-content: flex-end;
     width: auto;
   }
 
-  .menu-layout > .menu-sidebar {
-    flex: 1 1 0;
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-2);
     width: auto;
   }
 
-  .menu-list {
+  .main-nav .button {
+    margin-left: var(--space-2);
+  }
+
+  /* Menu beside the fixed-width opening-hours sidebar */
+
+  .menu-layout {
+    grid-template-columns: minmax(0, 1fr) 16rem;
+  }
+
+  /* Two cards across within the menu column */
+
+  .menu-list,
+  .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -884,9 +800,11 @@ button:focus-visible {
   }
 }
 
-/* Wide desktop: three menu cards across */
-@media (min-width: 1024px) {
-  .menu-list {
+/* Wide desktop */
+
+@media (min-width: 64rem) {
+  .menu-list,
+  .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -896,32 +814,21 @@ button:focus-visible {
 }
 
 /* =========================================
-   17. PRINT STYLES
+   16. PRINT STYLES
    ========================================= */
 
 @media print {
-  /* Hide header navigation */
   .header-nav,
-  .main-nav {
-    display: none !important;
-  }
-
-  /* Hide WhatsApp button */
-  .whatsapp-button {
-    display: none !important;
-  }
-
-  /* Hide contact form */
+  .main-nav,
+  .whatsapp-button,
   .contact-form {
     display: none !important;
   }
 
-  /* Avoid printing sticky/fixed header behavior */
   .site-header {
     position: static;
   }
 
-  /* Remove unnecessary visual effects from print */
   .card {
     box-shadow: none;
     break-inside: avoid;
@@ -934,7 +841,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   18. REDUCED MOTION ACCESSIBILITY
+   17. REDUCED MOTION ACCESSIBILITY
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
