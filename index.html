@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,26 +21,18 @@
   </head>
 
   <body>
+
     <!-- HEADER -->
     <header class="site-header">
       <div class="container">
         <p class="logo">Mama Njeri's Kitchen</p>
 
-        <!-- Navigation using list structure -->
+        <!-- Main navigation -->
         <nav class="main-nav" aria-label="Main navigation">
           <ul class="nav-list">
-            <li>
-              <a href="#menu">Menu</a>
-            </li>
-
-            <li>
-              <a href="#about">About us</a>
-            </li>
-
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li>
               <a class="button" href="#contact">Order now</a>
             </li>
@@ -50,6 +43,7 @@
 
     <!-- MAIN CONTENT -->
     <main>
+
       <!-- HERO SECTION -->
       <section class="hero">
         <div class="container">
@@ -62,7 +56,7 @@
           </p>
 
           <div class="hero__actions">
-            <a class="button" href="#menu"> See today's menu </a>
+            <a class="button" href="#menu">See today's menu</a>
 
             <a class="button button--secondary" href="tel:+254717544278">
               Call us
@@ -87,13 +81,251 @@
             Order on WhatsApp
           </a>
 
-          <a class="button button--secondary" href="tel:+254712345678">
+          <a class="button button--secondary" href="tel:+254717544278">
             Call us
           </a>
         </div>
       </section>
 
-      <section class="container">
+      <!-- FOOD GALLERY -->
+      <section class="gallery-section container" id="gallery">
+        <h2>Our Food Gallery</h2>
+
+        <p>
+          Explore some of the delicious meals prepared at Mama Njeri's Kitchen.
+        </p>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item">
+            <img
+              src="images/Traditional_Kenyan_Meal.avif"
+              alt="Freshly prepared traditional Kenyan meal"
+            />
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Aplate_Pilau_Rice.avif"
+              alt="A plate of delicious pilau rice"
+            />
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Chapati_SavouryStew.avif"
+              alt="Chapati served with a savoury stew"
+            />
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Cooked_Veges_Rice.avif"
+              alt="Freshly cooked vegetables and rice"
+            />
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Traditional_Kenya_Meat.avif"
+              alt="A traditional Kenyan meat dish"
+            />
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="images/Plate_AssortedFood.avif"
+              alt="A freshly prepared plate of assorted food"
+            />
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- MENU SECTION -->
+      <section id="menu" class="menu-section">
+        <div class="container">
+
+          <h2 class="menu-heading">Our Menu</h2>
+
+          <p class="menu-intro">
+            Explore our delicious selection of freshly prepared meals.
+          </p>
+
+          <!-- MENU GRID -->
+          <div class="menu-list">
+
+            <!-- MENU CARD 1 -->
+            <article class="menu-card featured-card">
+              <span class="menu-tag">Popular</span>
+
+              <h3>Nyama Choma</h3>
+
+              <p>
+                Tender, freshly grilled meat served with kachumbari
+                and your choice of traditional accompaniment.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 850</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+            <!-- MENU CARD 2 -->
+            <article class="menu-card">
+              <span class="menu-tag">Traditional</span>
+
+              <h3>Ugali and Sukuma Wiki</h3>
+
+              <p>
+                A Kenyan favourite featuring soft ugali served
+                with freshly cooked sukuma wiki.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 350</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+            <!-- MENU CARD 3 -->
+            <article class="menu-card">
+              <span class="menu-tag">Chef's Choice</span>
+
+              <h3>Chapati and Beef Stew</h3>
+
+              <p>
+                Soft, freshly prepared chapati served with
+                delicious, slowly cooked beef stew.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 500</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+            <!-- MENU CARD 4 -->
+            <article class="menu-card">
+              <span class="menu-tag">Fresh</span>
+
+              <h3>Grilled Chicken</h3>
+
+              <p>
+                Well-seasoned chicken grilled to perfection
+                and served with a tasty side dish.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 750</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+            <!-- MENU CARD 5 -->
+            <article class="menu-card">
+              <span class="menu-tag">Vegetarian</span>
+
+              <h3>Githeri</h3>
+
+              <p>
+                A traditional mixture of maize and beans,
+                carefully cooked with fresh vegetables.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 300</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+            <!-- MENU CARD 6 -->
+            <article class="menu-card">
+              <span class="menu-tag">Special</span>
+
+              <h3>Pilau</h3>
+
+              <p>
+                Fragrant spiced rice prepared with traditional
+                seasoning and served with kachumbari.
+              </p>
+
+              <div class="menu-card-footer">
+                <span class="menu-price">KSh 600</span>
+
+                <a href="#contact" class="btn">Order Now</a>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- OPENING HOURS -->
+          <aside
+            class="opening-hours menu-sidebar"
+            aria-labelledby="opening-hours-title"
+          >
+            <h3 id="opening-hours-title">Opening hours</h3>
+
+            <dl class="opening-hours-list">
+
+              <div class="opening-hours-item">
+                <dt>Monday to Friday</dt>
+                <dd>7 am – 9 pm</dd>
+              </div>
+
+              <div class="opening-hours-item">
+                <dt>Saturday and Sunday</dt>
+                <dd>8 am – 9 pm</dd>
+              </div>
+
+              <div class="opening-hours-item">
+                <dt>Public holidays</dt>
+                <dd>9 am – 8 pm</dd>
+              </div>
+
+            </dl>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- GRID SIZING TEST -->
+      <section class="container grid-sizing-test">
+        <h2>Grid Sizing Test</h2>
+
+        <h3>Using minmax(0, 1fr)</h3>
+
+        <div class="grid-test-minmax">
+          <div class="grid-test-item">Rice</div>
+
+          <div class="grid-test-item">
+            Supercalifragilisticexpialidociouswithoutspaces
+          </div>
+
+          <div class="grid-test-item">Chapati</div>
+        </div>
+
+        <h3>Using plain 1fr</h3>
+
+        <div class="grid-test-1fr">
+          <div class="grid-test-item">Rice</div>
+
+          <div class="grid-test-item">
+            Supercalifragilisticexpialidociouswithoutspaces
+          </div>
+
+          <div class="grid-test-item">Chapati</div>
+        </div>
+      </section>
+
+      <!-- 12-COLUMN GRID TEST -->
+      <section class="container grid-test-section">
         <h2>12-Column Grid Test</h2>
 
         <div class="grid-12-test">
@@ -102,178 +334,11 @@
         </div>
       </section>
 
-      <!-- MENU SECTION -->
-      <section id="menu" class="menu-section">
-        <div class="container">
-          <h2>Today's menu</h2>
-
-          <p>Explore our delicious homemade meals.</p>
-
-          <div class="menu-layout">
-            <!-- MENU LIST -->
-            <div class="menu-list">
-              <!-- MENU CARD 1 -->
-              <article class="card">
-                <img
-                  src="images/Beef_Pilau_Kachumbari.webp"
-                  alt="Beef pilau served with fresh kachumbari"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <h3>Beef Pilau</h3>
-
-                  <p>
-                    Spiced rice cooked with tender beef, served with fresh
-                    kachumbari.
-                  </p>
-
-                  <p class="price">KSh 350</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-
-              <!-- MENU CARD 2 -->
-              <article class="card">
-                <img
-                  src="images/Chapati_Coconutbeans.avif"
-                  alt="Chapati served with coconut beans"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <h3>Chapati and Beans</h3>
-
-                  <p>Two soft chapatis served with delicious coconut beans.</p>
-
-                  <p class="price">KSh 200</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-
-              <!-- MENU CARD 3 -->
-              <article class="card featured">
-                <img
-                  src="images/Special-Githeri.jpg"
-                  alt="Githeri served with fresh vegetables"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <span class="badge">Chef's choice</span>
-
-                  <h3>Githeri Special</h3>
-
-                  <p>
-                    Maize and beans fried with onions, tomatoes and avocado.
-                  </p>
-
-                  <p class="price">KSh 250</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-
-              <!-- MENU CARD 4 -->
-              <article class="card featured">
-                <img
-                  src="images/Traditional_Mukimo.avif"
-                  alt="Traditional mukimo served with vegetables"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <span class="badge">Chef's choice</span>
-
-                  <h3>Mukimo Special</h3>
-
-                  <p>
-                    A hearty maize-and-potato dish served with fresh vegetables.
-                  </p>
-
-                  <p class="price">KSh 300</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-
-              <!-- MENU CARD 5 -->
-              <article class="card">
-                <img
-                  src="images/adrian-infernus-food.jpg"
-                  alt="Grilled chicken served with rice and vegetables"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <h3>Grilled Chicken</h3>
-
-                  <p>
-                    Grilled chicken served with rice, vegetables and a side
-                    sauce.
-                  </p>
-
-                  <p class="price">KSh 850</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-
-              <!-- MENU CARD 6 -->
-              <article class="card">
-                <img
-                  src="images/Fried_Eggs.jpg"
-                  alt="Fried eggs served with vegetables"
-                  class="card__image"
-                />
-
-                <div class="card__content">
-                  <h3>Fried Eggs</h3>
-
-                  <p>Fried eggs served with vegetables and a side sauce.</p>
-
-                  <p class="price">KSh 350</p>
-
-                  <a class="button" href="#contact"> Order </a>
-                </div>
-              </article>
-            </div>
-
-            <!-- OPENING HOURS -->
-            <aside
-              class="opening-hours menu-sidebar"
-              aria-labelledby="opening-hours-title"
-            >
-              <h3 id="opening-hours-title">Opening hours</h3>
-              <dl class="opening-hours-list">
-                <div class="opening-hours-item">
-                  <dt>Monday to Friday</dt>
-                  <dd>7 am – 9 pm</dd>
-                </div>
-
-                <div class="opening-hours-item">
-                  <dt>Saturday and Sunday</dt>
-                  <dd>8 am – 9 pm</dd>
-                </div>
-
-                <div class="opening-hours-item">
-                  <dt>Public holidays</dt>
-                  <dd>9 am – 8 pm</dd>
-                </div>
-              </dl>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT SECTION WITH MEDIA OBJECT -->
+      <!-- ABOUT SECTION -->
       <section id="about" class="about-section">
         <div class="container">
           <h2>About us</h2>
 
-          <!-- Media object -->
           <article class="media">
             <img
               src="images/A cook.avif"
@@ -286,8 +351,7 @@
 
               <p>
                 We opened with one jiko and two tables. Today, we serve more
-                than
-                <strong>200 customers</strong> a day.
+                than <strong>200 customers</strong> a day.
               </p>
 
               <p>
@@ -309,54 +373,88 @@
         <div class="container">
           <h2>Contact us</h2>
 
-          <p>Have a question or want to place an order? Send us a message.</p>
+          <p>
+            Have a question or want to place an order? Send us a message.
+          </p>
 
           <form class="contact-form">
-            <label for="firstname">First name</label>
 
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              autocomplete="given-name"
-              required
-            />
+            <div class="form-group">
+              <label for="name">Full Name</label>
 
-            <label for="lastname">Last name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
 
-            <input
-              type="text"
-              id="lastname"
-              name="lastname"
-              autocomplete="family-name"
-              required
-            />
+            <div class="form-group">
+              <label for="email">Email Address</label>
 
-            <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              required
-            />
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
 
-            <label for="message">Message</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+              />
+            </div>
 
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="form-group">
+              <label for="subject">Subject</label>
 
-            <button type="submit">Send message</button>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Enter the subject"
+              />
+            </div>
+
+            <div class="form-group form-message">
+              <label for="message">Your Message</label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Write your message"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group form-submit">
+              <button type="submit" class="btn">Send Message</button>
+            </div>
+
           </form>
         </div>
       </section>
+
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; 2026 Mama Njeri's Kitchen. Open daily, 7 am to 9 pm.</p>
+        <p>
+          &copy; 2026 Mama Njeri's Kitchen. Open daily, 7 am to 9 pm.
+        </p>
       </div>
     </footer>
+
   </body>
 </html>

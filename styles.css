@@ -1,6 +1,6 @@
 /* =========================================
    1. DESIGN TOKENS
-   ========================================= */
+========================================= */
 
 :root {
   /* Colours */
@@ -18,11 +18,13 @@
   /* Typography */
   --font-family-base: "Inter", Arial, sans-serif;
   --font-family-heading: "Playfair Display", Georgia, serif;
+
   --font-size-small: 0.875rem;
   --font-size-body: 1rem;
   --font-size-large: 1.25rem;
   --font-size-heading: 1.5rem;
   --font-size-display: 2.5rem;
+
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
@@ -34,6 +36,7 @@
   --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+
   --section-spacing: 3rem;
 
   /* Cards */
@@ -51,9 +54,7 @@
 
 /* =========================================
    2. RESET, BASE STYLES AND STICKY FOOTER
-   Requires header, main and footer as direct
-   children of body.
-   ========================================= */
+========================================= */
 
 *,
 *::before,
@@ -69,14 +70,18 @@ html {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+
   min-height: 100vh;
   min-height: 100dvh;
+
   margin: 0;
   padding: 0;
+
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-normal);
   line-height: 1.6;
+
   color: var(--color-text);
   background-color: var(--color-background);
 }
@@ -85,10 +90,12 @@ h1,
 h2,
 h3 {
   margin-top: 0;
+
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   letter-spacing: -0.02em;
+
   color: var(--color-primary-dark);
 }
 
@@ -130,15 +137,18 @@ img {
 
 /* =========================================
    3. HEADER AND NAVIGATION
-   ========================================= */
+========================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+
   padding: var(--space-3);
+
   color: var(--color-primary-tint);
   background-color: var(--color-primary-dark);
+
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -147,15 +157,18 @@ img {
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3);
+
   min-width: 0;
 }
 
 .logo {
   margin: 0;
+
   color: var(--color-primary-tint);
   font-family: var(--font-family-heading);
   font-size: clamp(1.25rem, 5vw, 1.5rem);
   font-weight: var(--font-weight-bold);
+
   overflow-wrap: anywhere;
 }
 
@@ -163,6 +176,7 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
   width: 100%;
   min-width: 0;
 }
@@ -172,38 +186,46 @@ img {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-2);
+
   width: 100%;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
 .main-nav a {
   display: flex;
   align-items: center;
+
   min-height: 44px;
   padding: var(--space-2) var(--space-3);
+
   color: var(--color-primary-tint);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
+
   border-radius: 6px;
 }
 
-.main-nav a:focus-visible {
-  outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+.main-nav a:hover {
+  color: #fff;
+  background-color: rgb(255 255 255 / 0.12);
 }
 
 /* =========================================
    4. HERO SECTION
-   ========================================= */
+========================================= */
 
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
+
   min-height: auto;
   padding: 3rem var(--space-4);
+
   text-align: center;
   background-color: var(--color-primary-tint);
 }
@@ -217,6 +239,7 @@ img {
 .hero h1 {
   max-width: 18ch;
   margin-bottom: var(--space-4);
+
   font-size: clamp(2rem, 5vw + 1rem, 4rem);
 }
 
@@ -226,10 +249,12 @@ img {
 
 .eyebrow {
   margin-bottom: var(--space-3);
+
   color: var(--color-primary);
   font-family: var(--font-family-base);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
+
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -239,6 +264,7 @@ img {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-3);
+
   width: 100%;
   margin-top: var(--space-6);
 }
@@ -249,11 +275,12 @@ img {
 
 /* =========================================
    5. BUTTONS AND ACCESSIBILITY
-   ========================================= */
+========================================= */
 
 .button,
 .whatsapp-button,
-.contact-form button {
+.contact-form button,
+.btn {
   min-height: 44px;
 }
 
@@ -270,29 +297,42 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-.button {
+.button,
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   padding: var(--space-3) var(--space-6);
+
   color: #fff;
   background-color: var(--color-primary);
+
   border: 2px solid var(--color-primary);
   border-radius: 6px;
+
   font: inherit;
   font-weight: var(--font-weight-bold);
   text-align: center;
   text-decoration: none;
+
   cursor: pointer;
+
   transition:
     background-color 200ms ease,
     border-color 200ms ease,
     transform 100ms ease;
 }
 
-.button:hover {
+.button:hover,
+.btn:hover {
+  color: #fff;
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.button:active {
+.button:active,
+.btn:active {
   transform: scale(0.97);
 }
 
@@ -310,7 +350,7 @@ button:focus-visible {
 
 /* =========================================
    6. ORDER SECTION
-   ========================================= */
+========================================= */
 
 .order-section {
   padding: var(--section-spacing) var(--space-4);
@@ -329,25 +369,62 @@ button:focus-visible {
 
 .whatsapp-button {
   padding: var(--space-3) var(--space-5);
+
   color: #fff;
   background-color: #15803d;
+
   border-radius: 999px;
+
   font-weight: var(--font-weight-bold);
   text-decoration: none;
+
   transition:
     background-color 200ms ease,
     transform 100ms ease;
 }
 
 .whatsapp-button:hover {
+  color: #fff;
   background-color: #166534;
 }
 
 /* =========================================
-   7. MENU SECTION AND GRID LAYOUT
-   One column on mobile.
-   At 48rem: menu + 16rem sidebar.
-   ========================================= */
+   7. FOOD GALLERY
+========================================= */
+
+.gallery-section {
+  padding-block: var(--space-6);
+}
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 12rem;
+
+  gap: var(--space-3);
+}
+
+.gallery-item {
+  min-width: 0;
+  margin: 0;
+
+  overflow: hidden;
+  border-radius: var(--card-radius);
+}
+
+.gallery-item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================
+   8. MENU SECTION AND LAYOUT
+========================================= */
 
 #menu {
   padding: var(--section-spacing) var(--space-4);
@@ -362,59 +439,177 @@ button:focus-visible {
   text-align: center;
 }
 
+.menu-heading {
+  margin-bottom: var(--space-3);
+}
+
+.menu-intro {
+  margin-bottom: var(--space-6);
+}
+
+/* Menu and opening-hours layout */
+
 .menu-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-6);
+
   align-items: start;
+  gap: var(--space-6);
 }
 
-.menu-list,
-.menu-sidebar {
-  min-width: 0;
-}
-
-/* Menu cards within the main menu area */
+/* Menu grid: one column on mobile */
 
 .menu-list,
 .card-grid {
   display: grid;
+
   grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: minmax(10rem, auto);
+
   align-items: stretch;
   gap: var(--space-4);
+
+  min-width: 0;
+}
+
+.menu-list > *,
+.card-grid > *,
+.menu-sidebar {
   min-width: 0;
 }
 
 /* =========================================
-   8. MENU CARDS
-   ========================================= */
+   9. NEW MENU CARD DESIGN
+========================================= */
 
-.card {
-  position: relative;
+/* Menu card */
+
+.menu-card {
   display: flex;
   flex-direction: column;
+
+  height: 100%;
   min-width: 0;
-  overflow: hidden;
+
+  padding: var(--space-4);
+
+  color: var(--color-text);
   background-color: var(--color-primary-tint);
+
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
+
   box-shadow: var(--card-shadow);
+
+  overflow-wrap: anywhere;
+
   transition:
     transform 200ms ease-out,
     box-shadow 200ms ease-out;
 }
 
-@media (hover: hover) {
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
-  }
+/* Category tags */
+
+.menu-tag {
+  display: inline-block;
+  align-self: flex-start;
+
+  margin-bottom: var(--space-3);
+  padding: 0.35rem var(--space-3);
+
+  color: var(--color-primary-dark);
+  background-color: #fff;
+
+  border: 1px solid var(--color-primary-light);
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 0.03em;
+}
+
+/* Menu card headings */
+
+.menu-card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+
+  overflow-wrap: anywhere;
+}
+
+/* Menu card descriptions */
+
+.menu-card p {
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+/* Price and button footer */
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: var(--space-2);
+
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.menu-price {
+  color: #15803d;
+
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+
+  white-space: nowrap;
+}
+
+.menu-card-footer .btn {
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+/* Featured menu card */
+
+.featured-card {
+  grid-column: span 1;
+}
+
+/* Retained styles for any older card components */
+
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+
+  background-color: var(--color-primary-tint);
+
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform 200ms ease-out,
+    box-shadow 200ms ease-out;
 }
 
 .card__image {
   display: block;
+
   width: 100%;
   aspect-ratio: 4 / 3;
+
   object-fit: cover;
 }
 
@@ -422,6 +617,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   flex: 1;
+
   min-width: 0;
   padding: var(--card-padding);
 }
@@ -429,6 +625,7 @@ button:focus-visible {
 .card h3 {
   margin-top: 0;
   margin-bottom: var(--space-3);
+
   overflow-wrap: anywhere;
 }
 
@@ -456,13 +653,18 @@ button:focus-visible {
   top: var(--space-3);
   right: var(--space-3);
   z-index: var(--z-badge);
+
   display: inline-block;
   padding: 0.35rem var(--space-3);
+
   color: #111;
   background-color: #ffd166;
+
   border-radius: 999px;
+
   font-size: 0.72rem;
   font-weight: var(--font-weight-bold);
+
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -471,23 +673,37 @@ button:focus-visible {
   text-decoration: line-through;
 }
 
+/* Card hover effects */
+
+@media (hover: hover) {
+  .card:hover,
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+  }
+}
+
 /* =========================================
-   9. OPENING HOURS
-   ========================================= */
+   10. OPENING HOURS
+========================================= */
 
 .opening-hours {
   min-width: 0;
   padding: 1.5rem;
+
   color: #33251b;
   background-color: #fff8ef;
+
   border: 1px solid #e6cdb3;
   border-left: 4px solid #a34b08;
   border-radius: 0.75rem;
+
   overflow-wrap: anywhere;
 }
 
 .opening-hours h3 {
   margin: 0 0 1rem;
+
   color: #823b06;
   font-size: 1.25rem;
   line-height: 1.3;
@@ -500,11 +716,13 @@ button:focus-visible {
 .opening-hours-item + .opening-hours-item {
   margin-top: 1rem;
   padding-top: 1rem;
+
   border-top: 1px solid #e6cdb3;
 }
 
 .opening-hours-item dt {
   margin: 0 0 0.25rem;
+
   font-weight: 600;
   line-height: 1.5;
 }
@@ -515,8 +733,8 @@ button:focus-visible {
 }
 
 /* =========================================
-   10. ABOUT SECTION
-   ========================================= */
+   11. ABOUT SECTION
+========================================= */
 
 .about-section {
   padding: var(--section-spacing) var(--space-4);
@@ -531,19 +749,24 @@ button:focus-visible {
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-4);
+
   max-width: 60rem;
   margin-inline: auto;
   padding: var(--space-4);
+
   background-color: var(--color-primary-tint);
+
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
 }
 
 .media__image {
   flex: none;
+
   width: 100%;
   height: auto;
   max-height: 350px;
+
   object-fit: cover;
   border-radius: 8px;
 }
@@ -562,8 +785,8 @@ button:focus-visible {
 }
 
 /* =========================================
-   11. CONTACT SECTION AND FORM
-   ========================================= */
+   12. CONTACT SECTION AND FORM
+========================================= */
 
 #contact {
   padding: var(--section-spacing) var(--space-4);
@@ -579,33 +802,57 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Contact form */
+
 .contact-form {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-3);
+  gap: var(--space-4);
+
   width: 100%;
-  max-width: 32rem;
+  max-width: 48rem;
+
   margin-inline: auto;
+}
+
+/* Group each label and input */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  min-width: 0;
 }
 
 .contact-form label {
   display: block;
+
   margin: 0;
+
   font-weight: var(--font-weight-bold);
 }
+
+/* Form controls */
 
 .contact-form input,
 .contact-form textarea {
   display: block;
+
   width: 100%;
   min-width: 0;
   max-width: 100%;
+
   padding: var(--space-3);
+
   color: #1f2937;
   background-color: var(--color-surface);
+
   border: 1px solid #6b7280;
   border-radius: 6px;
+
   font: inherit;
+
   transition:
     border-color 200ms ease,
     box-shadow 200ms ease;
@@ -615,25 +862,43 @@ button:focus-visible {
   resize: vertical;
 }
 
+/* Focus styles */
+
 .contact-form input:focus-visible,
 .contact-form textarea:focus-visible {
   border-color: var(--color-primary);
+
   outline: 3px solid var(--color-primary-light);
   outline-offset: 2px;
+
   box-shadow: 0 0 0 3px rgb(230 126 34 / 0.25);
 }
+
+/* Invalid email field */
 
 .contact-form input[type="email"]:user-invalid {
   border-color: #dc2626;
   background-color: #fef2f2;
+
   box-shadow: 0 0 0 3px rgb(220 38 38 / 0.2);
 }
 
+/* Optional email error message */
+
 .email-error {
   display: none;
+
   margin: 0;
+
   color: #dc2626;
   font-size: var(--font-size-small);
+}
+
+/* Message and submit button span full width */
+
+.form-message,
+.form-submit {
+  grid-column: 1 / -1;
 }
 
 .contact-form button {
@@ -642,13 +907,15 @@ button:focus-visible {
 }
 
 /* =========================================
-   12. FOOTER
-   ========================================= */
+   13. FOOTER
+========================================= */
 
 .site-footer {
   padding: var(--space-8) var(--space-4);
+
   color: var(--color-primary-tint);
   background-color: var(--color-primary-dark);
+
   text-align: center;
 }
 
@@ -657,8 +924,8 @@ button:focus-visible {
 }
 
 /* =========================================
-   13. UTILITY CLASSES
-   ========================================= */
+   14. UTILITY CLASSES
+========================================= */
 
 .is-hidden {
   display: none;
@@ -666,25 +933,60 @@ button:focus-visible {
 
 .visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
   clip-path: inset(50%);
+
   white-space: nowrap;
   border: 0;
 }
 
 /* =========================================
-   14. 12-COLUMN GRID TEST
-   Use these classes on a test section.
-   ========================================= */
+   15. GRID SIZING COMPARISON TEST
+========================================= */
+
+.grid-test-minmax {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+
+  min-width: 0;
+}
+
+.grid-test-1fr {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.grid-test-item {
+  min-width: 0;
+  padding: var(--space-3);
+
+  border: 1px solid currentColor;
+  border-radius: var(--card-radius);
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   16. 12-COLUMN GRID TEST
+========================================= */
 
 .grid-12-test {
   display: grid;
+
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--space-3);
+
   width: 100%;
   margin-block: var(--space-6);
 }
@@ -692,9 +994,12 @@ button:focus-visible {
 .grid-12-test > * {
   min-width: 0;
   padding: var(--space-4);
+
   background-color: var(--color-primary-tint);
+
   border: 1px solid var(--color-border);
   border-radius: 6px;
+
   overflow-wrap: anywhere;
 }
 
@@ -707,8 +1012,44 @@ button:focus-visible {
 }
 
 /* =========================================
-   15. RESPONSIVE DESIGN
-   ========================================= */
+   17. RESPONSIVE DESIGN
+   Mobile-first breakpoints
+========================================= */
+
+/* Small screens */
+
+@media (max-width: 30rem) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 10rem;
+  }
+
+  .grid-12-test {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .span-8 {
+    grid-column: span 3;
+  }
+
+  .span-4 {
+    grid-column: span 1;
+  }
+
+  .media {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+
+    padding: var(--space-4);
+  }
+
+  .media__image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+  }
+}
 
 /* Wider phones and small tablets */
 
@@ -721,6 +1062,7 @@ button:focus-visible {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
     width: auto;
   }
 
@@ -740,7 +1082,19 @@ button:focus-visible {
   }
 }
 
-/* Tablet: 48rem = 768px */
+/* Menu tablet breakpoint: 40rem = 640px */
+
+@media (min-width: 40rem) {
+  .menu-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-card {
+    grid-column: span 2;
+  }
+}
+
+/* Tablet layout: 48rem = 768px */
 
 @media (min-width: 48rem) {
   .site-header {
@@ -766,6 +1120,7 @@ button:focus-visible {
     justify-content: flex-end;
     align-items: center;
     gap: var(--space-2);
+
     width: auto;
   }
 
@@ -773,17 +1128,10 @@ button:focus-visible {
     margin-left: var(--space-2);
   }
 
-  /* Menu beside the fixed-width opening-hours sidebar */
+  /* Opening hours sidebar */
 
   .menu-layout {
     grid-template-columns: minmax(0, 1fr) 16rem;
-  }
-
-  /* Two cards across within the menu column */
-
-  .menu-list,
-  .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .media {
@@ -794,18 +1142,31 @@ button:focus-visible {
 
   .media__image {
     flex: 0 0 250px;
+
     width: 250px;
     height: 250px;
     max-height: none;
   }
+
+  /* Contact form: two columns */
+
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* Wide desktop */
+/* Desktop menu breakpoint: 64rem = 1024px */
 
 @media (min-width: 64rem) {
   .menu-list,
   .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Featured card returns to one column */
+
+  .featured-card {
+    grid-column: span 1;
   }
 
   .hero {
@@ -814,8 +1175,8 @@ button:focus-visible {
 }
 
 /* =========================================
-   16. PRINT STYLES
-   ========================================= */
+   18. PRINT STYLES
+========================================= */
 
 @media print {
   .header-nav,
@@ -829,7 +1190,8 @@ button:focus-visible {
     position: static;
   }
 
-  .card {
+  .card,
+  .menu-card {
     box-shadow: none;
     break-inside: avoid;
   }
@@ -841,8 +1203,8 @@ button:focus-visible {
 }
 
 /* =========================================
-   17. REDUCED MOTION ACCESSIBILITY
-   ========================================= */
+   19. REDUCED MOTION ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
