@@ -256,17 +256,14 @@ img {
 ========================================= */
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 
-  min-height: auto;
   padding: 3rem var(--space-4);
 
   text-align: center;
   background-color: var(--color-primary-tint);
 }
-
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -322,7 +319,8 @@ img {
 }
 
 .button,
-.whatsapp-button {
+.whatsapp-button,
+.btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -336,10 +334,6 @@ button:focus-visible {
 
 .button,
 .btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
   padding: var(--space-3) var(--space-6);
 
   color: #fff;
@@ -429,6 +423,44 @@ button:focus-visible {
    7. FOOD GALLERY
 ========================================= */
 
+/* =========================================
+   FOUR FIXED-WIDTH THUMBNAILS
+========================================= */
+
+.thumbnail-row {
+  display: grid;
+
+  /* Four equal columns, each exactly 10rem wide. */
+  grid-template-columns: repeat(4, 10rem);
+
+  /* Centers the four fixed-width columns
+     when there is extra horizontal space. */
+  justify-content: center;
+
+  gap: var(--space-3);
+}
+
+.thumbnail {
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: var(--card-radius);
+}
+
+.thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+@media (max-width: 48rem) {
+  .thumbnail-row {
+    grid-template-columns: repeat(2, 10rem);
+  }
+}
+
 .gallery-section {
   padding-block: var(--space-6);
 }
@@ -465,20 +497,23 @@ button:focus-visible {
 }
 
 /* =========================================
-   8. MENU SECTION AND LAYOUT
+   8. MENU SECTION AND CARDS
 ========================================= */
 
+.align-self-start {
+  align-self: start;
+}
 #menu {
   padding: var(--section-spacing) var(--space-4);
 }
 
-.menu-section > .container > h2 {
+.menu-section > .container > h2,
+.menu-section > .container > p {
   text-align: center;
 }
 
 .menu-section > .container > p {
   margin-inline: auto;
-  text-align: center;
 }
 
 .menu-heading {
@@ -488,8 +523,10 @@ button:focus-visible {
 .menu-intro {
   margin-bottom: var(--space-6);
 }
+
 .menu-list,
-.card-grid {
+.card-grid,
+.card-comparison {
   display: grid;
 
   /* Safe auto-fit pattern:
@@ -500,25 +537,24 @@ button:focus-visible {
     minmax(min(16rem, 100%), 1fr)
   );
 
-  grid-auto-rows: minmax(10rem, auto);
-
   align-items: stretch;
   gap: var(--space-4);
 
   min-width: 0;
 }
 
-/* =========================================
-   9. MENU CARD DESIGN
-========================================= */
+.menu-list,
+.card-grid {
+  grid-auto-rows: minmax(10rem, auto);
+}
 
-.menu-card {
-  display: flex;
-  flex-direction: column;
+.card-comparison {
+  margin-bottom: var(--space-6);
+}
 
-  height: 100%;
+.menu-card,
+.comparison-card {
   min-width: 0;
-
   padding: var(--space-4);
 
   color: var(--color-text);
@@ -534,6 +570,13 @@ button:focus-visible {
   transition:
     transform 200ms ease-out,
     box-shadow 200ms ease-out;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
 }
 
 .menu-tag {
@@ -596,7 +639,7 @@ button:focus-visible {
 }
 
 .featured-card {
-  grid-column: span 1;
+  grid-column: auto;
 }
 
 @media (hover: hover) {
@@ -608,7 +651,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   10. SIDEBAR: OPENING HOURS AND LOCATION
+   9. SIDEBAR: HOURS AND LOCATION
 ========================================= */
 
 .sidebar {
@@ -657,20 +700,8 @@ button:focus-visible {
   line-height: 1.5;
 }
 
-@media (min-width: 64rem) {
-  .sidebar {
-    padding: var(--section-spacing) var(--space-4);
-    border-top: 0;
-    border-left: 1px solid #e6cdb3;
-  }
-
-  .sidebar .container {
-    width: 100%;
-  }
-}
-
 /* =========================================
-   11. ABOUT SECTION
+   10. ABOUT SECTION
 ========================================= */
 
 .about-section {
@@ -722,7 +753,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   12. CONTACT SECTION AND FORM
+   11. CONTACT SECTION AND FORM
 ========================================= */
 
 #contact {
@@ -730,13 +761,13 @@ button:focus-visible {
   background-color: var(--color-primary-tint);
 }
 
-#contact h2 {
+#contact h2,
+#contact > .container > p {
   text-align: center;
 }
 
 #contact > .container > p {
   margin-inline: auto;
-  text-align: center;
 }
 
 .contact-form {
@@ -830,7 +861,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   13. FOOTER
+   12. FOOTER
 ========================================= */
 
 .site-footer {
@@ -847,7 +878,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   14. UTILITY CLASSES
+   13. UTILITY CLASSES
 ========================================= */
 
 .is-hidden {
@@ -871,10 +902,11 @@ button:focus-visible {
 }
 
 /* =========================================
-   15. GRID TESTS
+   14. GRID TESTS
 ========================================= */
 
-.grid-sizing-test {
+.grid-sizing-test,
+.auto-fit-test {
   padding-block: var(--section-spacing);
 }
 
@@ -934,26 +966,7 @@ button:focus-visible {
   grid-column: span 4;
 }
 
-/* =========================================
-   AUTO-FIT VS AUTO-FILL COMPARISON
-========================================= */
-
-.auto-fit-test {
-  padding-block: var(--section-spacing);
-}
-
-.card-comparison {
-  display: grid;
-
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(16rem, 100%), 1fr)
-  );
-
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
+/* Auto-fill retains empty tracks, while auto-fit collapses them. */
 .card-comparison--auto-fill {
   grid-template-columns: repeat(
     auto-fill,
@@ -962,28 +975,18 @@ button:focus-visible {
 }
 
 .comparison-card {
-  min-width: 0;
   padding: var(--space-4);
-
-  background-color: var(--color-primary-tint);
-
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-
-  box-shadow: var(--card-shadow);
-
-  overflow-wrap: anywhere;
 }
 
 /* =========================================
-   16. RESPONSIVE DESIGN
+   15. RESPONSIVE DESIGN
 ========================================= */
 
 @media (max-width: 30rem) {
   .gallery-grid {
     grid-auto-rows: 10rem;
   }
-}
+
   .grid-12-test {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1025,6 +1028,11 @@ button:focus-visible {
     padding: var(--card-padding);
   }
 }
+
+@media (min-width: 48rem) {
+  .site-header {
+    padding: var(--space-4) var(--space-6);
+  }
 
   .site-header .container {
     flex-direction: row;
@@ -1073,21 +1081,22 @@ button:focus-visible {
 }
 
 @media (min-width: 64rem) {
-  .menu-list,
-  .card-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .featured-card {
-  grid-column: auto;
-}
   .hero {
     padding-block: 5rem;
+  }
+
+  .sidebar {
+    border-top: 0;
+    border-left: 1px solid #e6cdb3;
+  }
+
+  .sidebar .container {
+    width: 100%;
   }
 }
 
 /* =========================================
-   17. PRINT STYLES
+   16. PRINT STYLES
 ========================================= */
 
 @media print {
@@ -1114,7 +1123,7 @@ button:focus-visible {
 }
 
 /* =========================================
-   18. REDUCED MOTION
+   17. REDUCED MOTION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
